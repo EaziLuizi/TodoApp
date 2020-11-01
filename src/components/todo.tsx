@@ -20,9 +20,13 @@ function Todo({ todo }) {
           readOnly
         />
         <span
+          className="todo-item-delete"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+            if (window.confirm("Are you sure you want to delete this item?")) {
+              //todo - implement delete functionality
+            }
           }}
         >
           <i className="fa fa-trash"></i>

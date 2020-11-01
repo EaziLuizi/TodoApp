@@ -1,9 +1,59 @@
+.app {
+    background-color: #fff;
+    background-image: url("images/double-bubble.png");
+}
+
+.container {
+    background-color: rgba(53, 53, 52, 0.822);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.heading {
+    margin-top: 0;
+    font-family: "Dancing Script", cursive, sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    color: #FFF;
+}
+
+
+/***Add todo items**/
+
+.input-container {
+    display: flex;
+}
+
+.input-text {
+    flex: 1;
+    width: 100%;
+    line-height: 24px;
+    font-size: medium;
+    padding: 5px;
+}
+
+.btn-add {
+    flex: 0 0 80px;
+}
+
+
+/***Todo items**/
+
 .todo-item {
     display: flex;
     padding: 10px 5px;
     border: 1px solid lightgray;
     border-width: 1px 0;
     text-align: left;
+    color: #FFF;
+}
+
+.todo-item:hover,
+.todo-item input:hover {
+    cursor: pointer;
 }
 
 .todo-item>div {
@@ -12,5 +62,32 @@
 
 .todo-item.completed {
     text-decoration: line-through;
-    color: green;
+    color: rgb(0, 68, 255);
+}
+
+.todo-item-actions {
+    max-width: 60px;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.todo-item-actions>* {
+    padding: 0 10px;
+}
+
+.todo-item-actions>input {
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+    padding: 10px;
+}
+
+.todo-item-delete {
+    color: #FFF;
+}
+
+.todo-item-delete:hover {
+    color: red;
 }

@@ -9,9 +9,13 @@ import AddTodo from "./components/addTodo";
 function App() {
   return (
     <Provider store={store}>
-      <div className="App"></div>
-      <AddTodo />
-      <TodoList />
+      <div className="app">
+        <div className="container">
+          <h1 className="heading">my todo list</h1>
+          <AddTodo />
+          <TodoList />
+        </div>
+      </div>
     </Provider>
   );
 }
