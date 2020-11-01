@@ -1,2 +1,2 @@
 # todo-app
-React and Redux - Simple Todo app
+Simple Todo application using ReactJS and Redux

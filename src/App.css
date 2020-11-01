@@ -1,0 +1,16 @@
+.todo-item {
+    display: flex;
+    padding: 10px 5px;
+    border: 1px solid lightgray;
+    border-width: 1px 0;
+    text-align: left;
+}
+
+.todo-item>div {
+    flex: 1;
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    color: green;
+}
