@@ -1,24 +1,19 @@
 import { connect, useDispatch } from "react-redux";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { TodoItem } from "../Interfaces/shared";
 import store from "../redux/store";
 import { toggleCompleted } from "../redux/actions";
+import Todo from "./todo";
 
 function TodoList() {
   const state = store.getState();
   const dispatch = useDispatch();
 
   const items = state.map((item: TodoItem) => (
-    <div
-      key={item.id}
-      onClick={() => dispatch(toggleCompleted(item.id))}
-      className={`todo-item ${item.completed ? "completed" : ""}`}
-    >
-      <div>{item.description}</div>
-    </div>
+    <Todo key={item.id} todo={item} />
   ));
 
-  return <div>{items}</div>;
+  return <div className="todo-list-container">{items}</div>;
 }
 
 const mapStateToProps = (state: TodoItem[]) => {
