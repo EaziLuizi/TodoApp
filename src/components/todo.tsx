@@ -1,7 +1,7 @@
 import React from "react";
 import { TodoItem } from "../Interfaces/shared";
 import { connect, useDispatch } from "react-redux";
-import { toggleCompleted } from "../redux/actions";
+import { toggleCompleted, deleteTodo } from "../redux/actions";
 
 function Todo({ todo }) {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function Todo({ todo }) {
             e.preventDefault();
             e.stopPropagation();
             if (window.confirm("Are you sure you want to delete this item?")) {
-              //todo - implement delete functionality
+              dispatch(deleteTodo(todo.id));
             }
           }}
         >

@@ -2,12 +2,10 @@ import { connect, useDispatch } from "react-redux";
 import React from "react";
 import { TodoItem } from "../Interfaces/shared";
 import store from "../redux/store";
-import { toggleCompleted } from "../redux/actions";
 import Todo from "./todo";
 
 function TodoList() {
   const state = store.getState();
-  const dispatch = useDispatch();
 
   const items = state.map((item: TodoItem) => (
     <Todo key={item.id} todo={item} />

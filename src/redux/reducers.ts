@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_COMPLETED } from "./actionTypes";
+import { ADD_TODO, TOGGLE_COMPLETED, DELETE_TODO } from "./actionTypes";
 import { TodoItem } from "../Interfaces/shared";
 
 const initialState: TodoItem[] = [
@@ -22,6 +22,10 @@ const todos = (state = initialState, action: any) => {
       if (item) {
         item.completed = !item.completed;
       }
+      return newState;
+    }
+    case DELETE_TODO: {
+      let newState = state.filter(x => x.id !== action.payload.id);
       return newState;
     }
     default: {
